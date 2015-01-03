@@ -18,12 +18,14 @@
   "homepage": "https://github.com/plasticpanda/koa-rr",
   "dependencies": {
     "debug": "^2.1.1",
-    "koa": "^0.14.0",
     "lodash": "^2.4.1",
-    "path-to-regexp": "^1.0.2",
-    "tape": "^3.0.3"
+    "path-to-regexp": "^1.0.2"
   },
   "engine": {
     "node": "^0.11"
+  },
+  "devDependencies": {
+    "koa": "^0.14.0",
+    "tape": "^3.0.3"
   }
 }
