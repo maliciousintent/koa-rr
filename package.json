@@ -1,0 +1,28 @@
+{
+  "name": "koa-rr",
+  "version": "0.0.1",
+  "description": "wrapper for koa-route with reverse urls",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --harmony test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:plasticpanda/koa-rr.git"
+  },
+  "author": "Simone Lusenti <simone@plasticpanda.com>",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/plasticpanda/koa-rr/issues"
+  },
+  "homepage": "https://github.com/plasticpanda/koa-rr",
+  "dependencies": {
+    "debug": "^2.1.1",
+    "lodash": "^2.4.1",
+    "path-to-regexp": "^1.0.2",
+    "tape": "^3.0.3"
+  },
+  "engine": {
+    "node": "^0.11"
+  }
+}
