@@ -1,6 +1,6 @@
 {
   "name": "koa-rr",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "wrapper for koa-route with reverse urls",
   "main": "index.js",
   "scripts": {
