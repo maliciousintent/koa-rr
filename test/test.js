@@ -27,6 +27,6 @@ test('reverse with property', function (t) {
 test('reverse with many properties', function (t) {
   t.throws(function () { rr.reverse('post-with-cat'); }, 'should throw if prop are missing');
   t.throws(function () { rr.reverse('post-with-cat', { slug: 'foo' }); }, 'should throw if one prop is missing');
-  t.equal(rr.reverse('post-with-cat', { slug: 'foo', category: 'bar' }), '/post/bar/foo', 'should work');
+  t.equal(rr.reverse('post-with-cat', { slug: 'foo', category: 'bar', noob: 'toob' }), '/post/bar/foo', 'should work');
   t.end();
 });

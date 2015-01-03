@@ -9,6 +9,12 @@ var PARAM_MARKER = ':';
 
 module.exports = Rr;
 
+
+/**
+ * Initialize Rr
+ * @param {object} app    a Koa app()
+ * @param {router} router an optional koa-route obj, if none one is created and expsed via Rr.getRouter()
+ */
 function Rr(app, router) {
   assert(typeof app !== 'undefined', 'Expected parameter: app');
   
@@ -25,11 +31,18 @@ function Rr(app, router) {
 }
 
 
+/**
+ * Get internal koa-route instance
+ */
 Rr.prototype.getRouter = function() {
   return this.router;
 };
 
 
+/**
+ * Swallow routes from config obj
+ * @param  {object} config_ configuration object (see test/config.js for examples)
+ */
 Rr.prototype.configure = function(config_) {
   
   config_.forEach(function addRoute(route, index) {
@@ -54,6 +67,13 @@ Rr.prototype.configure = function(config_) {
 };
 
 
+/**
+ * Get reverse url for route
+ * @param  {string} name name of the route
+ * @param  {object} obj  an object containing parameters to merge in the url
+ * @return {string}      the reversed url
+ * @throws {AssertionError} if the route is not found or an other error occurs
+ */
 Rr.prototype.reverse = function(name, obj) {
   debug('Finding reverse for route %s', name);
   

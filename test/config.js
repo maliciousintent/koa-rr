@@ -5,11 +5,6 @@
  * this module will export a list of routes, all the keys are required
  */
 
-function fooGen(i) {
-  return function* foo() {/*jshint noyield:true */
-    this.body = 'foo' + i;
-  };
-}
 
 
 module.exports = [
@@ -46,3 +41,11 @@ module.exports = [
   { name: 'post-with-cat', url: '/post/:category/:slug', method: 'get', controller: fooGen(2) }
 
 ];
+
+
+// Test helpers
+function fooGen(i) {
+  return function* foo() {/*jshint noyield:true */
+    this.body = 'foo' + i;
+  };
+}
