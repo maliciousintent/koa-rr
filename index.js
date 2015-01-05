@@ -51,15 +51,17 @@ Rr.prototype.configure = function(config_) {
     var url = route.url;
     var controller = route.controller;
     
+    assert(name, 'Missing route name at index ' + index);
+    assert(!this.table.hasOwnProperty(name), 'Duplicate route name ' + name);
+    
     assert(this.router.hasOwnProperty(method), 'Invalid HTTP method ' + method);
     debug('Adding route %s: %s %s', name, method, url);
     
+    assert(typeof controller === 'function', 'Controller for route ' + route.name + ' should be a function, not ' + controller);
+    
     // add this route to the app
     this.app.use(this.router[method].call(this.router, url, controller));
-    
     // add this route to the table
-    assert(name, 'Missing route name at index ' + index);
-    assert(!this.table.hasOwnProperty(name), 'Duplicate route name ' + name);
     this.table[name] = url;
     
   }.bind(this));
