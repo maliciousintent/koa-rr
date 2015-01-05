@@ -27,6 +27,7 @@
   "devDependencies": {
     "koa": "^0.14.0",
     "koa-route": "^2.4.0",
+    "pre-commit": "0.0.9",
     "tape": "^3.0.3"
   }
 }
