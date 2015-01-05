@@ -92,10 +92,16 @@ Rr.prototype.reverse = function(name, obj) {
   keys.forEach(function (name) {
     assert(typeof obj === 'object', 'Second parameter to Rr.reverse should be an object when reversing a url with params.');
     assert(obj.hasOwnProperty(name), 'Second parameter to Rr.reverse should contain a property named "' + name + '". It does not.');
-    assert(typeof obj[name] === 'string', 'Second parameter to Rr.reverse should contain a string property named "' + name + '". It is not a string.');
+    
+    var val;
+    if (typeof obj[name] !== 'string') {
+      val = obj[name].toString();
+    } else {
+      val = obj[name];
+    }
     
     debug('Replacing prop with name %s', name);
-    urlPattern = urlPattern.replace(PARAM_MARKER + name, obj[name]);
+    urlPattern = urlPattern.replace(PARAM_MARKER + name, val);
   });
   
   return urlPattern;

@@ -19,7 +19,7 @@ test('reverse simple', function (t) {
 test('reverse with property', function (t) {
   t.throws(function () { rr.reverse('post'); }, 'should throw if prop is missing');
   t.throws(function () { rr.reverse('post', {}); }, 'should throw if prop is undefined');
-  t.throws(function () { rr.reverse('post', { slug: 123 }); }, 'should throw if prop is not a string');
+  t.equal(rr.reverse('post', { slug: 123 }), '/post/123', 'should stringify if prop is not a string');
   t.equal(rr.reverse('post', { slug: 'foo' }), '/post/foo', 'should work');
   t.end();
 });
