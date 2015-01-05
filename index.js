@@ -87,6 +87,9 @@ Rr.prototype.reverse = function(name, obj) {
   var keys = [];
   pathToRegexp(urlPattern, keys);
   debug('%d props in url', keys.length);
+  try {
+    debug('object is %s', JSON.stringify(obj));
+  } catch (e) {}
   
   keys = _.pluck(keys, 'name');
   keys.forEach(function (name) {
